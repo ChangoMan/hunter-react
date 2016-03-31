@@ -1,0 +1,15 @@
+.site-header__main {
+    padding: 20px 0;
+    margin-bottom: 20px;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #dddddd;
+}
+
+.site-content {
+    margin-bottom: 30px;
+}
+
+.site-footer {
+    padding: 20px 0;
+    border-top: 1px solid #dddddd;
+}
