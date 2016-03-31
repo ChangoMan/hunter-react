@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class MainNav extends Component {
     render() {
         return (
-            <nav className="navbar navbar-light bg-faded u-bottom20">
+            <nav className="navbar navbar-dark bg-inverse u-bottom20">
                 <div className="container">
                     <ul className="nav navbar-nav">
                         <li className="nav-item active">
