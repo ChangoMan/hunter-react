@@ -1,9 +1,24 @@
+/* Util */
+
+.u-bottom20 {margin-bottom: 20px;}
+
+/* Main */
 .site-header__main {
     padding: 20px 0;
-    margin-bottom: 20px;
     background-color: #f6f6f6;
     border-bottom: 1px solid #dddddd;
 }
+
+/*.site-header__nav {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dddddd;
+}
+ul.main-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #eeeeee;
+}*/
 
 .site-content {
     margin-bottom: 30px;

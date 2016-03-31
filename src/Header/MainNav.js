@@ -3,15 +3,24 @@ import React, { Component } from 'react';
 export default class MainNav extends Component {
     render() {
         return (
-            <div>
+            <nav className="navbar navbar-light bg-faded u-bottom20">
                 <div className="container">
-                    <nav>
-                        <ul>
-                            <li><a href="http://google.com">Google</a></li>
-                        </ul>
-                    </nav>
+                    <ul className="nav navbar-nav">
+                        <li className="nav-item active">
+                            <a className="nav-link" href="#">Home</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Features</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
+            </nav>
         );
     }
 }
