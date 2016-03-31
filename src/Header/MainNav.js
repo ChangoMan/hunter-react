@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { IndexLink, Link } from 'react-router';
 
 export default class MainNav extends Component {
     render() {
@@ -8,7 +8,7 @@ export default class MainNav extends Component {
                 <div className="container">
                     <ul className="nav navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/" activeClassName="active">Home</Link>
+                            <IndexLink className="nav-link" to="/" activeClassName="active">Home</IndexLink>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/about" activeClassName="active">About</Link>

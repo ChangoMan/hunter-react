@@ -2,17 +2,27 @@ import React, { Component } from 'react';
 
 export default class Main extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            title: "Default Title",
+        };
+    }
+
     handleChange(e) {
-        const title = e.target.value;
-        this.props.changeTitle(title);
+        this.setState({title: e.target.value});
     }
 
     render() {
+
+        var title = this.state.title;
+
         return (
             <div>
-                <h1>{this.props.title}</h1>
+                <h1>Home</h1>
+                <h2>{title}</h2>
                 <div className="form-group">
-                    <input className="form-control" value={this.props.title} onChange={this.handleChange.bind(this)} />
+                    <input className="form-control" value={title} onChange={this.handleChange.bind(this)} />
                 </div>
             </div>
         );
