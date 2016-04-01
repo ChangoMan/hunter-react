@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
+import Header from './layout/Header';
+import Sidebar from './layout/Sidebar';
+import Footer from './layout/Footer';
 
 export default class App extends Component {
 
