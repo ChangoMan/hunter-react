@@ -3,6 +3,11 @@
 .u-bottom20 {margin-bottom: 20px;}
 
 /* Main */
+
+.site-wrap.is-showing {
+    background-color: #cccccc;
+}
+
 .site-header__main {
     padding: 20px 0;
     background-color: #f6f6f6;

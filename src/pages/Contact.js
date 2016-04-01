@@ -27,6 +27,7 @@ export default class Contact extends Component {
                     <p>Collapsed Content</p>
                 </div>
                 <p><button className="btn btn-primary" onClick={this.toggleCollapse.bind(this)}>Button</button></p>
+                <button className="btn btn-warning" onClick={this.props.toggleMobile}>Children Toggle BG</button>
             </div>
         );
     }
