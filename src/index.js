@@ -6,6 +6,7 @@ import Main from './pages/Main';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Articles from './pages/Articles';
+import Todos from './pages/Todos';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -17,6 +18,7 @@ ReactDOM.render((
             <Route path="/about(/:article)" component={About}/>
             <Route path="/contact" component={Contact}/>
             <Route path="/articles" component={Articles}/>
+            <Route path="/todos" component={Todos}/>
         </Route>
     </Router>
 ), document.getElementById('root'));

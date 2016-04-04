@@ -7,10 +7,27 @@ export default class Articles extends Component {
         console.log(this.props);
 
         const Articles = [
+            {
+                title: "Article One",
+                btnText: "Read More"
+            },
+            {
+                title: "Article Two",
+                btnText: "Click Here"
+            },
+            {
+                title: "Article Three",
+                btnText: "Learn More"
+            },
+        ].map((article, i) => <Article key={i} {...article} />);
+
+        {/*} OLD example, new example above using an array
+        const Articles = [
             "Article One",
             "Article Two",
             "Article Three",
-        ].map((title, i) => <Article key={i} title={title} />);
+        ].map((title, i) => <Article key={i} title={title} />); // Arrow function one liner, no need for return
+        */}
 
         {/*
         const Articles = [
