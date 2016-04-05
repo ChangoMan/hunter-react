@@ -1,23 +1,43 @@
 import React, { Component } from 'react';
 import Todo from '../components/Todo';
 import TodoStore from "../stores/TodoStore";
+import * as TodoActions from "../actions/TodoActions";
 
 export default class Todos extends Component {
 
     constructor() {
         super();
+        this.getTodos = this.getTodos.bind(this);
         this.state = {
             todos: TodoStore.getAll(),
         };
     }
 
     componentWillMount() {
-        TodoStore.on("change", () => {
-            this.setState({
-                todos : TodoStore.getAll(),
-            });
+        TodoStore.on("change", this.getTodos);
+    }
+
+    componentWillUnmount() {
+        TodoStore.removeListener("change", this.getTodos);
+    }
+
+    getTodos() {
+        this.setState({
+            todos : TodoStore.getAll(),
         });
     }
+
+    createTodo() {
+        TodoActions.createTodo(Date.now());
+    }
+
+    reloadTodos() {
+        TodoActions.reloadTodos();
+    }
+
+    /*deleteTodo() {
+        TodoActions.deleteTodo("113464643");
+    }*/
 
     render() {
 
@@ -33,6 +53,9 @@ export default class Todos extends Component {
                 <ul>
                     {TodoComponents}
                 </ul>
+                <p><button className="btn btn-primary" onClick={this.createTodo.bind(this)}>Create!</button></p>
+                <p><button className="btn btn-info" onClick={this.reloadTodos.bind(this)}>Reload!</button></p>
+                {/* <p><button className="btn btn-danger" onClick={this.deleteTodo.bind(this)}>Delete!</button></p> */}
             </div>
         );
     }

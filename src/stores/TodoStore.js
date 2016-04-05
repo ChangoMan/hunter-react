@@ -1,5 +1,7 @@
 import { EventEmitter } from "events";
 
+import dispatcher from "../dispatcher";
+
 class TodoStore extends EventEmitter {
 
     constructor() {
@@ -36,9 +38,26 @@ class TodoStore extends EventEmitter {
         return this.todos;
     }
 
+    handleActions(action) {
+        switch(action.type) {
+            case "CREATE_TODO": {
+                this.createTodo(action.text);
+            }
+            case "RECEIVE_TODOS": {
+                this.todos = action.todos;
+                this.emit("change");
+            }
+        }
+        // console.log("TodoStore received an action", action);
+    }
+
 }
 
 const todoStore = new TodoStore;
+
+dispatcher.register(todoStore.handleActions.bind(todoStore));
+
+window.dispatcher = dispatcher;
 
 // window.todoStore = todoStore; // Allows browser console to access todoStore and its functions
 
