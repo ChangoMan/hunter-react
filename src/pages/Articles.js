@@ -19,7 +19,7 @@ export default class Articles extends Component {
                 title: "Article Three",
                 btnText: "Learn More"
             },
-        ].map((article, i) => <Article key={i} {...article} />);
+        ].map((article, i) => <Article key={i} title={article.title} btnText={article.btnText} />);
 
         {/*} OLD example, new example above using an array
         const Articles = [
