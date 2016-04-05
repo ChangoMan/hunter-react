@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
 import Todo from '../components/Todo';
+import TodoStore from "../stores/TodoStore";
 
 export default class Todos extends Component {
 
     constructor() {
         super();
         this.state = {
-            todos: [
-                {
-                    id: 113464643,
-                    text: "Go Shopping",
-                    more: "GOGO",
-                    complete: false
-                },
-                {
-                    id: 235684679,
-                    text: "Pay Bills",
-                    more: "PAYPAY",
-                    complete: false
-                },
-            ],
+            todos: TodoStore.getAll(),
         };
+    }
+
+    componentWillMount() {
+        TodoStore.on("change", () => {
+            this.setState({
+                todos : TodoStore.getAll(),
+            });
+        });
     }
 
     render() {
