@@ -27,14 +27,14 @@ export function reloadTodos() {
             todos: [
                 {
                     id: 4587381144,
-                    text: "Call Cab Again",
-                    more: "MORE",
+                    text: "Call A Cab",
+                    more: "Calling now",
                     complete: true
                 },
                 {
                     id: 45378996999,
-                    text: "Hug Wife",
-                    more: "HUG HUG",
+                    text: "Go to work",
+                    more: "Work Work",
                     complete: true
                 },
             ]

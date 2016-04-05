@@ -1,5 +1,4 @@
 import { EventEmitter } from "events";
-
 import dispatcher from "../dispatcher";
 
 class TodoStore extends EventEmitter {
@@ -42,10 +41,12 @@ class TodoStore extends EventEmitter {
         switch(action.type) {
             case "CREATE_TODO": {
                 this.createTodo(action.text);
+                break;
             }
             case "RECEIVE_TODOS": {
                 this.todos = action.todos;
                 this.emit("change");
+                break;
             }
         }
         // console.log("TodoStore received an action", action);
