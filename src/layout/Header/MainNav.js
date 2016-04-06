@@ -22,6 +22,9 @@ export default class MainNav extends Component {
                         <li className="nav-item">
                             <Link className="nav-link" to="/todos" activeClassName="active">Todos</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/data" activeClassName="active">Data</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>
