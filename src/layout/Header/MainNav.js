@@ -4,7 +4,7 @@ import { IndexLink, Link } from 'react-router';
 export default class MainNav extends Component {
     render() {
         return (
-            <nav className="navbar navbar-dark bg-inverse u-bottom20">
+            <nav className="navbar navbar-default u-bottom20">
                 <div className="container">
                     <ul className="nav navbar-nav">
                         <li className="nav-item">

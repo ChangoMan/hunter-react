@@ -16,7 +16,7 @@ export default class Contact extends Component {
 
     render() {
 
-        console.log(this.state);
+        // console.log(this.state);
         const {collapsed} = this.state; // makes collapsed the same thing as this.state.collapsed
         const navClass = collapsed ? "collapse" : "";
 

@@ -15,10 +15,10 @@ ReactDOM.render((
         <Route path="/" component={App}>
             <IndexRoute component={Main}/>
             {/* make them children of `App` */}
-            <Route path="/about(/:article)" component={About}/>
-            <Route path="/contact" component={Contact}/>
-            <Route path="/articles" component={Articles}/>
-            <Route path="/todos" component={Todos}/>
+            <Route path="about(/:article)" component={About}/>
+            <Route path="contact" component={Contact}/>
+            <Route path="articles" component={Articles}/>
+            <Route path="todos" component={Todos}/>
         </Route>
     </Router>
 ), document.getElementById('root'));
