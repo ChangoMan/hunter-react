@@ -1,36 +1,43 @@
 import React, { Component } from 'react';
-import Chance from 'chance';
+import ajax from 'superagent';
 
 export default class Data extends Component {
 
-    constructor() {
-        super();
+    componentWillMount () {
+        ajax.get('https://api.github.com/repos/facebook/react/commits')
+            .end((error, response) => {
+                if (!error && response) {
+                    console.dir(response.body);
+                    this.setState({ commits: response.body });
+                } else {
+                    console.log('There was an error fetching from GitHub', error);
+                }
+            })
+    }
 
-        const people = [];
-        for (let i = 0; i < 10; i++) {
-            people.push({
-                firstName: chance.first(),
-                lastName: chance.last(),
-                country: chance.country({ full: true })
-            });
-        }
+    constructor(props) {
+        super(props);
 
         this.state = {
-            people // Same As people: people, since the key name is the same as the value
+            commits: []
         };
     }
 
     render() {
-
-        // const { people } = this.state;
-
         return (
             <div>
                 <h2>Data</h2>
                 <hr />
-                {this.state.people.map((person, index) => (
-                    <p key={index}>Hello, {person.firstName} {person.lastName} from {person.country}!</p>
-                ))}
+
+                {this.state.commits.map((commit, index) => {
+                    const author = commit.author ? commit.author.login : 'Anonymous';
+                    const avatar = commit.author ? commit.author.avatar_url : 'Anonymous';
+                    return (
+                        <p key={index}><strong>{author}</strong>: <a href={commit.html_url}>{commit.commit.message}</a>. {avatar}</p>
+
+                    );
+                })}
+
             </div>
         );
     }
