@@ -14,36 +14,22 @@ export default class Data extends Component {
         };
     }
 
-    componentWillMount () {
-        ajax.get('https://api.github.com/repos/facebook/react/commits')
+    fetchFeed(type) {
+        ajax.get(`https://api.github.com/repos/facebook/react/${type}`)
             .end((error, response) => {
                 if (!error && response) {
-                    // console.dir(response.body);
-                    this.setState({ commits: response.body });
+                    this.setState({ [type]: response.body });
                 } else {
-                    console.log('There was an error fetching from GitHub', error);
+                    console.log(`Error fetching ${type}`, error);
                 }
-            });
+            }
+        );
+    }
 
-        ajax.get('https://api.github.com/repos/facebook/react/forks')
-            .end((error, response) => {
-                if (!error && response) {
-                    // console.dir(response.body);
-                    this.setState({ forks: response.body });
-                } else {
-                    console.log('There was an error fetching from GitHub', error);
-                }
-            });
-
-        ajax.get('https://api.github.com/repos/facebook/react/pulls')
-            .end((error, response) => {
-                if (!error && response) {
-                    console.dir(response.body);
-                    this.setState({ pulls: response.body });
-                } else {
-                    console.log('There was an error fetching from GitHub', error);
-                }
-            });
+    componentWillMount() {
+        this.fetchFeed('commits');
+        this.fetchFeed('forks');
+        this.fetchFeed('pulls');
     }
 
     showCommits() {
