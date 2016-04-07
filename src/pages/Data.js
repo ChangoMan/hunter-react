@@ -46,6 +46,24 @@ export default class Data extends Component {
             });
     }
 
+    showCommits() {
+        this.setState({
+            mode: 'commits';
+        });
+    }
+
+    showForks() {
+        this.setState({
+            mode: 'forks';
+        });
+    }
+
+    showPulls() {
+        this.setState({
+            mode: 'pulls';
+        });
+    }
+
     renderCommits() {
         return this.state.commits.map((commit, index) => {
             const author = commit.author ? commit.author.login : 'Anonymous';
@@ -89,6 +107,12 @@ export default class Data extends Component {
             <div>
                 <h2>Data</h2>
                 <hr />
+
+                <button onClick={this.showCommits.bind(this)}>Show Commits</button>
+                <button onClick={this.showForks.bind(this)}>Show Forks</button>
+                <button onClick={this.showPulls.bind(this)}>Show Pulls</button>
+
+                {content}
 
                 {/*
                 <h3>Commits</h3>
