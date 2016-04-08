@@ -32,22 +32,8 @@ export default class Data extends Component {
         this.fetchFeed('pulls');
     }
 
-    showCommits() {
-        this.setState({
-            mode: 'commits';
-        });
-    }
-
-    showForks() {
-        this.setState({
-            mode: 'forks';
-        });
-    }
-
-    showPulls() {
-        this.setState({
-            mode: 'pulls';
-        });
+    selectMode(mode) {
+        this.setState({ mode });
     }
 
     renderCommits() {
@@ -94,9 +80,9 @@ export default class Data extends Component {
                 <h2>Data</h2>
                 <hr />
 
-                <button onClick={this.showCommits.bind(this)}>Show Commits</button>
-                <button onClick={this.showForks.bind(this)}>Show Forks</button>
-                <button onClick={this.showPulls.bind(this)}>Show Pulls</button>
+                <button className="btn btn-primary" onClick={this.selectMode.bind(this, 'commits')}>Show Commits</button>
+                <button className="btn btn-primary" onClick={this.selectMode.bind(this, 'forks')}>Show Forks</button>
+                <button className="btn btn-primary" onClick={this.selectMode.bind(this, 'pulls')}>Show Pulls</button>
 
                 {content}
 
