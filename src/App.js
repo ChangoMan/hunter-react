@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './layout/Header';
 import Sidebar from './layout/Sidebar';
 import Footer from './layout/Footer';
+import { IndexLink, Link } from 'react-router';
 
 export default class App extends Component {
 

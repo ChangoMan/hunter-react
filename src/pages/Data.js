@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ajax from 'superagent';
-import { Link } from 'react-router';
+import { IndexLink, Link } from 'react-router';
 
 export default class Data extends Component {
 
@@ -78,6 +78,7 @@ export default class Data extends Component {
 
         return (
             <div>
+                <p>You are here: <IndexLink to="/" activeClassName="active">Home</IndexLink> > {this.props.params.repo}</p>
                 <h2>Data</h2>
                 <hr />
 

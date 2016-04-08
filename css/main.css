@@ -2,6 +2,10 @@
 
 .u-bottom20 {margin-bottom: 20px;}
 
+a.active {
+    color: black;
+}
+
 /* Main */
 
 .site-wrap.is-showing {

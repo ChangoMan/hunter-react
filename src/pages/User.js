@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ajax from 'superagent';
+import { IndexLink, Link } from 'react-router';
 
 export default class User extends Component {
 
