@@ -15,7 +15,7 @@ export default class Data extends Component {
     }
 
     fetchFeed(type) {
-        ajax.get(`https://api.github.com/repos/facebook/react/${type}`)
+        ajax.get(`https://api.github.com/repos/facebook/${this.props.params.repo}/${type}`)
             .end((error, response) => {
                 if (!error && response) {
                     this.setState({ [type]: response.body });
@@ -81,8 +81,16 @@ export default class Data extends Component {
                 <hr />
 
                 <button className="btn btn-primary" onClick={this.selectMode.bind(this, 'commits')}>Show Commits</button>
+
                 <button className="btn btn-primary" onClick={this.selectMode.bind(this, 'forks')}>Show Forks</button>
+
                 <button className="btn btn-primary" onClick={this.selectMode.bind(this, 'pulls')}>Show Pulls</button>
+
+                {/* Can also be this, using the data- attribute
+                <button className="btn btn-primary" onClick={this.selectMode.bind(this)} data-mode="pulls">Show Pulls</button>
+                */}
+
+                <hr />
 
                 {content}
 
