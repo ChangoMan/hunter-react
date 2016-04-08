@@ -19,13 +19,13 @@ export default class App extends Component {
 
     render() {
 
-        const message = "Welcome Hunter!"; // This is setting a prop, which is passes by x={x}
+        const message = 'Welcome Hunter!'; // This is setting a prop, which is passes by x={x}
 
         const {hideMobile} = this.state; // makes collapsed the same thing as this.state.collapsed
-        const mobileClass = hideMobile ? "is-hidden" : "is-showing";
+        const mobileClass = hideMobile ? 'is-hidden' : 'is-showing';
 
         return (
-            <div className={"site-wrap " + mobileClass}>
+            <div className={'site-wrap ' + mobileClass}>
                 <Header />
 
                 <div className="site-content">
