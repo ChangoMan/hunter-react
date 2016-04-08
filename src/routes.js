@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import Articles from './pages/Articles';
 import Todos from './pages/Todos';
 import Data from './pages/Data';
+import User from './pages/User';
 
 const routes = (
     <Route path="/" component={App}>
@@ -18,6 +19,7 @@ const routes = (
         <Route path="articles" component={Articles}/>
         <Route path="todos" component={Todos}/>
         <Route path="data/:repo" component={Data}/>
+        <Route path="user/:user" component={User}/>
     </Route>
 );
 

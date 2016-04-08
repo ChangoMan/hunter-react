@@ -31,6 +31,9 @@ export default class MainNav extends Component {
                         <li className="nav-item">
                             <Link className="nav-link" to="/data/jest" activeClassName="active">Jest</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/user/jimfb" activeClassName="active">User</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>

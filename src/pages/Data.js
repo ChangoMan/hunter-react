@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ajax from 'superagent';
+import { Link } from 'react-router';
 
 export default class Data extends Component {
 
@@ -40,7 +41,7 @@ export default class Data extends Component {
         return this.state.commits.map((commit, index) => {
             const author = commit.author ? commit.author.login : 'Anonymous';
             return (
-                <p key={index}><strong>{author}</strong>: <a href={commit.html_url}>{commit.commit.message}</a>.</p>
+                <p key={index}><strong><Link to={ `user/${author}` }>{author}</Link></strong>: <a href={commit.html_url}>{commit.commit.message}</a>.</p>
             );
         });
     }
