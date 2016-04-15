@@ -37,3 +37,14 @@ ul.main-nav {
     padding: 20px 0;
     border-top: 1px solid #dddddd;
 }
+
+/* Services */
+
+.service {
+    padding: 5px 10px;
+    background-color: #eee;
+    cursor: pointer;
+}
+.service.active {
+    background-color: #ddd;
+}
